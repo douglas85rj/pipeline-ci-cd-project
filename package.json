@@ -1,0 +1,33 @@
+{
+  "name": "pipeline-ci-cd-project",
+  "version": "1.0.0",
+  "description": "A simple web application with CI/CD pipeline using Docker and GitHub Actions.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/app.js",
+    "build": "docker build -t ${REGISTRY}/${IMAGE_NAME}:${GITHUB_SHA} ."
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglas85rj/pipeline-ci-cd-project.git"
+  },
+  "keywords": [
+    "ci",
+    "cd",
+    "docker",
+    "github-actions"
+  ],
+  "author": "Douglas Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglas85rj/pipeline-ci-cd-project/issues"
+  },
+  "homepage": "https://github.com/douglas85rj/pipeline-ci-cd-project#readme"
+}
