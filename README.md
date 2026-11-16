@@ -1,6 +1,4 @@
-# Pipeline CI/CD Project
-
-Este projeto é um exemplo de um pipeline de implantação automatizada em múltiplos ambientes para uma aplicação web. O objetivo é demonstrar como configurar um fluxo de trabalho CI/CD usando GitHub Actions, Docker e um ambiente de implantação.
+## Pipeline de Implantação Automatizada em Múltiplos Ambientes
 
 ## Estrutura do Projeto
 
