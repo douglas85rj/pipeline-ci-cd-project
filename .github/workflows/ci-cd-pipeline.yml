@@ -30,10 +30,10 @@ jobs:
       - name: Construir e enviar
         uses: docker/build-push-action@v5
         with:
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:cache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:cache,mode=max
+          cache-to: ${{ github.event_name != 'pull_request' && format('type=registry,ref={0}/{1}:cache,mode=max', env.REGISTRY, env.IMAGE_NAME) || '' }}
   deploy-staging:
     needs: build
     runs-on: ubuntu-latest
