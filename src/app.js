@@ -7,10 +7,13 @@ app.use(express.json());
 
 // Sample route
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.send('Welcome to the application!');
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Server is running on http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
